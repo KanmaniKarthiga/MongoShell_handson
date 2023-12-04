@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: antiquewhite;
+    margin-top: 30px;
+}
+h1{
+    color: rgb(51, 151, 11);
+    text-shadow: 2px 2px greenyellow;
+    text-align: center;
+    text-decoration: underline maroon;
+}
+h2{
+    margin-top: 20px;
+    color: maroon;
+    font-size: 20px;
+    font-weight: 100;
+}
+pre{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 5px;
+}

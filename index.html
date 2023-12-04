@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>MONGOSHELL HANDSON</h1>
+    <h2>Create a database , give it name like "Human_Resource". Create a collection inside this named "employee"</h2>
+    <pre>
+        use Human_Resources
+        switched to db Human_Resources
+        db.employee.insertOne({ "firstName": "John",
+        "lastName": "Doe",
+        "salary": "25000",
+        "department": "HR",
+        "lastCompany": "X",
+        "lastSalary": "10000",
+        "overallExp": "2",
+        "contactInfo": "1234567890",
+        "yearGrad": "2016",
+        "gradStream": "CSE"})
+    </pre>
+    <p>Then, using insert Document option, all the data has been inserted.</p>
+
+    <h2>Query the collection "employee" and list all the documents</h2>
+    <pre>
+        db.employee.find({})
+    </pre>
+
+    <h2>Query the collection "employee" and list the employees who are having salary more than 30000</h2>
+    <pre>
+        db.employee.find({"salary":{$gt:"30000"}})
+    </pre>
+
+    <h2>Query the collection "employee" and list the employees who are having experience more than 2 years.</h2>
+    <pre>
+        db.employee.find({"overallExp":{$gte:"2"}})
+    </pre>
+
+    <h2>Query the collection "employee" and list the employees who are graduated after 2015 and having experience more than 1 year </h2>
+    <pre>
+        db.employee.find({"yearGrad":{$gt:"2015"}} && {"overallExp":{$gt:"1"}})
+    </pre>
+
+    <h2>Query the collection "employee" and update the salary of the employee whose salary is greater than 70000 to 65000.</h2>
+    <pre>
+        db.employee.updateOne({"salary":{$gt:"75000"}},{$set:{"salary":"65000"}})
+    </pre>
+
+    <h2>Delete all the documents from "employee" where last company is Y</h2>
+    <pre>
+        db.employee.deleteOne({"lastCompany":"Y"})
+    </pre>
+</body>
+</html>
